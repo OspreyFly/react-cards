@@ -1,8 +1,6 @@
 import React from "react";
 import { useFlip } from './hooks';
 import "./PokemonCard.css";
-
-/* Renders a single pokemon card. */
 function PokemonCard({ front, back, name, stats }) {
   const [isFacingUp, flipCard] = useFlip();
 

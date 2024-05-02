@@ -1,4 +1,5 @@
 import React from "react";
+import axios from "axios";
 import { v4 as uuid } from "uuid";
 import PokemonSelect from "./PokemonSelect";
 import PokemonCard from "./PokemonCard";
@@ -6,14 +7,11 @@ import "./PokeDex.css";
 import { useAxios } from "./hooks";
 
 function PokeDex() {
-  // Assuming useAxios returns an object with data, loading, error, and possibly other properties
-  const { data: pokemon, loading, error, addData: addPokemon } = useAxios("https://pokeapi.co/api/v2/pokemon/", []);
+  const { data: pokemon, addData: addPokemon } = useAxios("https://pokeapi.co/api/v2/pokemon/", []);
 
   const addNewPokemon = async name => {
-    const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${name}/`);
-    // Assuming addPokemon is a function to add new data to the existing data
-    addPokemon({ ...response.data, id: uuid() });
-  };
+    addPokemon(`https://pokeapi.co/api/v2/pokemon/${name}`);
+  }
 
   return (
     <div className="PokeDex">

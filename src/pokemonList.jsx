@@ -1,4 +1,3 @@
-/* list of common pokemon for the PokemonSelect component. */
 const pokemon = [
   "pikachu",
   "jigglypuff",

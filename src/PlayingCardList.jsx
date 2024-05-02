@@ -4,10 +4,10 @@ import PlayingCard from './PlayingCard';
 import './CardTable.css';
 
 function CardTable() {
-  const { data: cards, addData: addCard } = useAxios('https://deckofcardsapi.com/api/deck/new/draw/', []);
+  const { data: cards, addData: addCard } = useAxios('https://deckofcardsapi.com/api/deck/new/draw/?count=1', []);
 
   const handleAddCard = () => {
-    addCard('https://deckofcardsapi.com/api/deck/new/draw/');
+    addCard('https://deckofcardsapi.com/api/deck/new/draw/?count=1');
   };
 
   return (
